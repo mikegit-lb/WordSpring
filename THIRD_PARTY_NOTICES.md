@@ -30,5 +30,6 @@ The Windows release is built with CPython 3.12.10, PySide6 6.12.0, pyttsx3 2.99,
 - **pyttsx3 2.99** — Mozilla Public License 2.0; its license text is included under `Licenses/pyttsx3-MPL-2.0.txt`.
 - **pywin32 312** — PSF-style license; its license text is included under `Licenses/pywin32.txt`.
 - **comtypes 1.4.17** — MIT License; its license text is included under `Licenses/comtypes-MIT.txt`.
+- **Inno Setup 7.1.1** — used to build `WordSpring-Setup.exe`. Copyright (C) 1997-2026 Jordan Russell; portions Copyright (C) 2000-2026 Martijn Laan. https://jrsoftware.org/ The Inno Setup license permits commercial use and redistribution subject to its stated conditions; its required copyright notices are retained in the installer.
 
 The Store build does not include the optional `edge-tts` package and makes no network requests. Its speech output uses Windows SAPI.

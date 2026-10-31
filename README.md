@@ -19,9 +19,13 @@ python -m pip install -r requirements.lock
 python main.py
 ```
 
-## Windows `.exe` oluşturma
+## Windows `.exe` oluşturma ve kurma
 
-Kurulum tamamlandıktan sonra `build_windows.bat` dosyasına çift tıklayın. Tek dosyalı, konsol penceresi açmayan uygulama `dist\WordSpring.exe` yolunda oluşturulur. Başka bir Windows 10/11 bilgisayarında çalıştırmak için bu dosyayı kopyalamanız yeterlidir; hedef bilgisayarda Python gerekmez.
+`build_windows.bat` taşınabilir uygulamayı `dist\WordSpring.exe` yolunda oluşturur. Bunu çalıştırmak için Python gerekmez; uygulama kurulmadan açılır.
+
+Normal kurulum paketi için `build_installer.bat` dosyasını çalıştırın. Betik `dist\WordSpring-Setup.exe` üretir. Kurulum uygulamayı geçerli Windows kullanıcısının Programs klasörüne koyar, masaüstü kısayolu ve Başlat menüsü girişleri oluşturur, kaldırıcı ekler ve kurulum sonunda uygulamayı başlatma seçeneği sunar. Kurulum yönetici izni istemez. Kelime ilerlemesi `%LOCALAPPDATA%\WordSpring` içinde kaldığı için uygulamayı kaldırıp daha sonra yeniden kurduğunuzda veriler korunur. Kurulum paketini derlemek için Inno Setup 7 gerekir.
+
+Kullanıcılara önerilen indirme, [GitHub Releases](https://github.com/mikegit-lb/WordSpring) sayfasındaki `WordSpring-Setup.exe` dosyasıdır. `WordSpring.exe` taşınabilir sürüm olarak ayrıca sunulur.
 
 ## Microsoft Store paketi
 
