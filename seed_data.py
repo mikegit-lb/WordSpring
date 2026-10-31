@@ -1,0 +1,182 @@
+"""A2/B1 starter vocabulary and its graded learner content.
+
+The original hand-authored entries live here. Additional open-data entries are
+kept in ``additional_seed_data.py`` with attribution documented in the project.
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from additional_seed_data import ADDITIONAL_WORDS
+
+# word, part of speech, IPA, simple definition, example, collocations
+A2_WORDS = [
+    ("accident", "noun", "/ˈæksɪdənt/", "an event that hurts someone or damages something", "He had a small accident on his bike.", "car accident; have an accident"),
+    ("advice", "noun", "/ədˈvaɪs/", "ideas that help someone decide what to do", "My teacher gave me good advice about studying.", "give advice; useful advice"),
+    ("agree", "verb", "/əˈɡriː/", "to have the same opinion as another person", "I agree with you about the film.", "agree with; agree to a plan"),
+    ("almost", "adverb", "/ˈɔːlmoʊst/", "nearly, but not completely", "We are almost ready to leave.", "almost finished; almost everyone"),
+    ("already", "adverb", "/ɔːlˈredi/", "before now or earlier than expected", "She has already eaten lunch.", "already know; already finished"),
+    ("arrive", "verb", "/əˈraɪv/", "to reach a place", "Our train will arrive at six.", "arrive at a place; arrive late"),
+    ("article", "noun", "/ˈɑːrtɪkəl/", "a piece of writing in a newspaper or on a website", "I read an article about healthy food.", "newspaper article; read an article"),
+    ("aunt", "noun", "/ænt/", "the sister of your mother or father", "My aunt lives near the sea.", "my aunt; aunt and uncle"),
+    ("bakery", "noun", "/ˈbeɪkəri/", "a shop where bread and cakes are made or sold", "I bought bread at the bakery.", "local bakery; go to the bakery"),
+    ("balcony", "noun", "/ˈbælkəni/", "a small outdoor area attached to an upper floor", "We had breakfast on the balcony.", "small balcony; balcony door"),
+    ("basket", "noun", "/ˈbæskɪt/", "a container used for carrying or holding things", "Put the apples in the basket.", "shopping basket; basket of fruit"),
+    ("battery", "noun", "/ˈbætəri/", "a thing that stores power for a device", "The remote needs a new battery.", "charge a battery; phone battery"),
+    ("beach", "noun", "/biːtʃ/", "an area of sand beside the sea or a lake", "We walked along the beach.", "sandy beach; go to the beach"),
+    ("bicycle", "noun", "/ˈbaɪsɪkəl/", "a vehicle with two wheels that you move by turning pedals", "He rides his bicycle to school.", "ride a bicycle; bicycle helmet"),
+    ("borrow", "verb", "/ˈbɑːroʊ/", "to use something and then give it back", "Can I borrow your pen?", "borrow a book; borrow money"),
+    ("bottle", "noun", "/ˈbɑːtəl/", "a container, usually made of glass or plastic, for liquids", "She filled her water bottle.", "bottle of water; glass bottle"),
+    ("bridge", "noun", "/brɪdʒ/", "a structure built over a river, road, or railway", "The old bridge crosses the river.", "cross a bridge; stone bridge"),
+    ("calendar", "noun", "/ˈkæləndər/", "a chart that shows the days, weeks, and months", "I wrote the date on the calendar.", "wall calendar; check a calendar"),
+    ("careful", "adjective", "/ˈkerfəl/", "trying not to make a mistake or have an accident", "Be careful with the hot pan.", "be careful; careful driver"),
+    ("celebrate", "verb", "/ˈseləbreɪt/", "to do something special for a happy event", "We celebrate her birthday at home.", "celebrate a birthday; celebrate together"),
+    ("center", "noun", "/ˈsentər/", "the middle point or part of a place or thing", "The hotel is near the center of town.", "city center; shopping center"),
+    ("cheap", "adjective", "/tʃiːp/", "costing little money", "These shoes are cheap but comfortable.", "cheap ticket; cheap meal"),
+    ("choose", "verb", "/tʃuːz/", "to decide which person or thing you want", "Please choose a book to read.", "choose a color; choose between"),
+    ("climb", "verb", "/klaɪm/", "to go up something using your hands and feet", "They climb the hill every weekend.", "climb a hill; climb a tree"),
+    ("cloudy", "adjective", "/ˈklaʊdi/", "covered with clouds", "It is cloudy this morning.", "cloudy sky; cloudy weather"),
+    ("collect", "verb", "/kəˈlekt/", "to bring things together or get them from different places", "We collect old books for the library.", "collect coins; collect information"),
+    ("comfortable", "adjective", "/ˈkʌmftərbəl/", "making you feel relaxed and pleasant", "This chair is comfortable.", "comfortable clothes; feel comfortable"),
+    ("cooker", "noun", "/ˈkʊkər/", "a machine used for cooking food", "The soup is on the cooker.", "gas cooker; cooker door"),
+    ("corner", "noun", "/ˈkɔːrnər/", "the place where two sides or streets meet", "The shop is on the corner.", "street corner; in the corner"),
+    ("cough", "noun", "/kɔːf/", "a sudden sound you make when your throat feels uncomfortable", "I have a cough today, so I will rest.", "dry cough; bad cough"),
+    ("crowded", "adjective", "/ˈkraʊdɪd/", "full of many people", "The bus was crowded after work.", "crowded bus; crowded place"),
+    ("dangerous", "adjective", "/ˈdeɪndʒərəs/", "likely to hurt someone or cause damage", "It is dangerous to swim here at night.", "dangerous road; dangerous animal"),
+    ("decide", "verb", "/dɪˈsaɪd/", "to choose something after thinking about it", "We need to decide where to eat.", "decide to go; decide what to do"),
+    ("dictionary", "noun", "/ˈdɪkʃəneri/", "a book or website that explains the meanings of words", "I looked up the word in a dictionary.", "English dictionary; look up a word"),
+    ("difference", "noun", "/ˈdɪfərəns/", "a way in which two or more things are not the same", "Can you see the difference between these photos?", "big difference; make a difference"),
+    ("direction", "noun", "/dəˈrekʃən/", "the way you need to go to reach a place", "Can you give me directions to the station?", "give directions; in this direction"),
+    ("dirty", "adjective", "/ˈdɜːrti/", "not clean", "His shoes are dirty after football.", "dirty clothes; dirty hands"),
+    ("dish", "noun", "/dɪʃ/", "a flat plate used for serving food", "Please put the dishes on the table.", "wash the dishes; a dish of rice"),
+    ("dry", "adjective", "/draɪ/", "without water or other liquid", "Keep your hands dry.", "dry clothes; dry weather"),
+    ("entrance", "noun", "/ˈentrəns/", "the place where you go into a building or area", "Wait for me at the entrance.", "main entrance; entrance to the museum"),
+    ("excited", "adjective", "/ɪkˈsaɪtɪd/", "very happy and interested about something that will happen", "The children are excited about the trip.", "excited about a trip; excited to see"),
+    ("exercise", "noun", "/ˈeksərsaɪz/", "physical activity that helps keep your body healthy", "I do some exercise every morning.", "do exercise; regular exercise"),
+    ("expensive", "adjective", "/ɪkˈspensɪv/", "costing a lot of money", "That restaurant is too expensive for us.", "expensive hotel; expensive gift"),
+    ("factory", "noun", "/ˈfæktəri/", "a building where machines make goods", "My uncle works in a car factory.", "car factory; factory worker"),
+    ("famous", "adjective", "/ˈfeɪməs/", "known by many people", "This city is famous for its old bridge.", "famous for; famous actor"),
+    ("farmer", "noun", "/ˈfɑːrmər/", "a person who grows food or looks after farm animals", "The farmer takes care of the cows.", "local farmer; farmer's market"),
+    ("festival", "noun", "/ˈfestɪvəl/", "a special time with music, food, or other events", "We listened to music at the festival.", "music festival; film festival"),
+    ("finish", "verb", "/ˈfɪnɪʃ/", "to complete something", "I finished my homework before dinner.", "finish work; finish a book"),
+    ("flight", "noun", "/flaɪt/", "a journey made in an airplane", "Our flight leaves at nine.", "catch a flight; direct flight"),
+    ("floor", "noun", "/flɔːr/", "the flat surface that you walk on inside a room", "The keys are on the floor.", "wooden floor; first floor"),
+    ("forest", "noun", "/ˈfɔːrɪst/", "a large area of land covered with trees", "We walked through the forest.", "deep forest; forest animals"),
+    ("fridge", "noun", "/frɪdʒ/", "a machine that keeps food and drinks cold", "Put the milk in the fridge.", "empty fridge; fridge door"),
+    ("friendly", "adjective", "/ˈfrendli/", "kind and pleasant to other people", "Our new neighbor is very friendly.", "friendly person; friendly smile"),
+    ("furniture", "noun", "/ˈfɜːrnɪtʃər/", "chairs, tables, and other things in a home or office", "We bought new furniture for the living room.", "office furniture; piece of furniture"),
+    ("garage", "noun", "/ɡəˈrɑːʒ/", "a building or room where a car is kept", "His bicycle is in the garage.", "car garage; garage door"),
+    ("guest", "noun", "/ɡest/", "a person invited to someone's home or an event", "We have two guests for dinner.", "welcome a guest; hotel guest"),
+    ("healthy", "adjective", "/ˈhelθi/", "well and strong; not ill", "Eating fruit helps you stay healthy.", "healthy food; healthy lifestyle"),
+    ("heavy", "adjective", "/ˈhevi/", "weighing a lot", "This bag is too heavy to carry.", "heavy box; heavy rain"),
+    ("hungry", "adjective", "/ˈhʌŋɡri/", "wanting or needing food", "I am hungry after our walk.", "feel hungry; hungry child"),
+    ("invitation", "noun", "/ˌɪnvɪˈteɪʃən/", "a request asking someone to come to an event", "I got an invitation to the party.", "party invitation; accept an invitation"),
+]
+
+B1_WORDS = [
+    ("ability", "noun", "/əˈbɪləti/", "the skill or power to do something", "She has the ability to learn languages quickly.", "ability to learn; natural ability"),
+    ("achieve", "verb", "/əˈtʃiːv/", "to succeed in doing something after working for it", "He achieved his goal after months of practice.", "achieve a goal; achieve success"),
+    ("advantage", "noun", "/ədˈvæntɪdʒ/", "something that helps you or gives you a better chance", "Speaking two languages is an advantage at work.", "big advantage; have an advantage"),
+    ("advertisement", "noun", "/ˌædvərˈtaɪzmənt/", "a message that tells people about a product or service", "I saw an advertisement for a new language course.", "online advertisement; television advertisement"),
+    ("affect", "verb", "/əˈfekt/", "to make a change to someone or something", "Bad weather can affect our travel plans.", "affect the result; affect health"),
+    ("although", "conjunction", "/ɔːlˈðoʊ/", "used to show that one fact is surprising next to another", "Although it was cold, we ate outside.", "although it is true; although tired"),
+    ("amount", "noun", "/əˈmaʊnt/", "how much of something there is", "We need a small amount of flour for the cake.", "large amount; amount of money"),
+    ("anxious", "adjective", "/ˈæŋkʃəs/", "worried or nervous about something that may happen", "She felt anxious before her first interview.", "feel anxious; anxious about the test"),
+    ("apologize", "verb", "/əˈpɑːlədʒaɪz/", "to say that you are sorry for something", "You should apologize for arriving so late.", "apologize for; apologize to someone"),
+    ("apply", "verb", "/əˈplaɪ/", "to make an official request for a job, place, or course", "He plans to apply for a job at the hospital.", "apply for a job; apply to a university"),
+    ("argue", "verb", "/ˈɑːrɡjuː/", "to disagree with someone and give reasons for your ideas", "They often argue about how to spend their money.", "argue about; argue with someone"),
+    ("arrange", "verb", "/əˈreɪndʒ/", "to plan or organize something", "We arranged a meeting for Friday morning.", "arrange a meeting; arrange a visit"),
+    ("attend", "verb", "/əˈtend/", "to go to an event, class, or meeting", "More than fifty people attended the talk.", "attend a class; attend a meeting"),
+    ("avoid", "verb", "/əˈvɔɪd/", "to stay away from someone or something", "I walk to work to avoid the traffic.", "avoid a problem; avoid doing something"),
+    ("behaviour", "noun", "/bɪˈheɪvjər/", "the way that a person or animal acts", "The teacher spoke to him about his behaviour in class.", "good behaviour; change your behaviour"),
+    ("belong", "verb", "/bɪˈlɔːŋ/", "to be in the right place or to be a member of a group", "These books belong on the top shelf.", "belong to a group; belong here"),
+    ("benefit", "noun", "/ˈbenɪfɪt/", "a good or helpful result", "One benefit of walking is that it costs nothing.", "health benefit; benefit of exercise"),
+    ("career", "noun", "/kəˈrɪr/", "the work you do over many years of your life", "She wants a career in science.", "career in teaching; start a career"),
+    ("cause", "verb", "/kɔːz/", "to make something happen", "The heavy rain caused problems on the roads.", "cause a problem; cause damage"),
+    ("challenge", "noun", "/ˈtʃælɪndʒ/", "a difficult task that tests your ability", "Learning to drive was a new challenge for him.", "face a challenge; difficult challenge"),
+    ("character", "noun", "/ˈkærəktər/", "a person in a book, film, or story", "My favorite character in the film is the young doctor.", "main character; fictional character"),
+    ("choice", "noun", "/tʃɔɪs/", "the act of choosing or the thing you choose", "We have a choice between the bus and the train.", "make a choice; first choice"),
+    ("communicate", "verb", "/kəˈmjuːnɪkeɪt/", "to share information, ideas, or feelings with someone", "We communicate with our team by email.", "communicate clearly; communicate with someone"),
+    ("compare", "verb", "/kəmˈper/", "to look at two or more things to see how they are similar or different", "Compare the two pictures and find three differences.", "compare prices; compare with"),
+    ("complain", "verb", "/kəmˈpleɪn/", "to say that you are unhappy about something", "The guests complained about the noise.", "complain about a service; complain to the manager"),
+    ("confident", "adjective", "/ˈkɑːnfɪdənt/", "sure that you can do something well", "She feels more confident when she speaks English.", "feel confident; confident about the future"),
+    ("consider", "verb", "/kənˈsɪdər/", "to think carefully about something before deciding", "Please consider all the choices before you answer.", "consider an offer; consider doing something"),
+    ("contain", "verb", "/kənˈteɪn/", "to have something inside or as a part", "This bottle contains enough water for the walk.", "contain information; contain sugar"),
+    ("continue", "verb", "/kənˈtɪnjuː/", "to keep doing something or to happen without stopping", "They continued working after lunch.", "continue to learn; continue working"),
+    ("create", "verb", "/kriˈeɪt/", "to make something new", "The students created a poster about the environment.", "create a plan; create a website"),
+    ("decision", "noun", "/dɪˈsɪʒən/", "a choice that you make after thinking", "It was a difficult decision to leave the city.", "make a decision; final decision"),
+    ("develop", "verb", "/dɪˈveləp/", "to grow, change, or improve over time", "Children develop new skills as they play.", "develop a skill; develop an idea"),
+    ("education", "noun", "/ˌedʒuˈkeɪʃən/", "the process of learning at school, college, or university", "Education can give people more choices.", "higher education; receive an education"),
+    ("environment", "noun", "/ɪnˈvaɪrənmənt/", "the natural world around us, including air, water, and land", "We can help the environment by using less plastic.", "protect the environment; natural environment"),
+    ("especially", "adverb", "/ɪˈspeʃəli/", "more than usual or more than other things", "I enjoy outdoor activities, especially hiking.", "especially important; especially for children"),
+    ("event", "noun", "/ɪˈvent/", "something that happens, often something planned", "The school is holding a music event next week.", "special event; sports event"),
+    ("experience", "noun", "/ɪkˈspɪriəns/", "knowledge or skill gained by doing or seeing things", "Her work experience helped her find a new job.", "work experience; gain experience"),
+    ("explain", "verb", "/ɪkˈspleɪn/", "to make an idea or situation clear to someone", "Can you explain how this machine works?", "explain a reason; explain something to someone"),
+    ("feature", "noun", "/ˈfiːtʃər/", "an important or noticeable part of something", "A large garden is a useful feature of this house.", "main feature; special feature"),
+    ("foreign", "adjective", "/ˈfɔːrən/", "from or connected with another country", "He enjoys learning foreign languages.", "foreign country; foreign language"),
+    ("improve", "verb", "/ɪmˈpruːv/", "to make something better or become better", "She practices every day to improve her writing.", "improve your English; improve a result"),
+    ("include", "verb", "/ɪnˈkluːd/", "to have someone or something as a part", "The price includes breakfast and a drink.", "include a name; include in the list"),
+    ("increase", "verb", "/ɪnˈkriːs/", "to become or make something larger in number, size, or amount", "The number of visitors increases in summer.", "increase the price; increase in number"),
+    ("influence", "noun", "/ˈɪnfluəns/", "the power to change how someone or something develops", "Parents have a strong influence on young children.", "have an influence; positive influence"),
+    ("instead", "adverb", "/ɪnˈsted/", "in place of someone or something else", "We did not take a taxi; we walked instead.", "instead of a car; do this instead"),
+    ("introduce", "verb", "/ˌɪntrəˈduːs/", "to tell people each other's names or present something new", "Let me introduce you to my colleague, Sara.", "introduce yourself; introduce a new idea"),
+    ("knowledge", "noun", "/ˈnɑːlɪdʒ/", "the information and skills you get by learning or experience", "Reading gives us knowledge about other places.", "gain knowledge; basic knowledge"),
+    ("manage", "verb", "/ˈmænɪdʒ/", "to succeed in doing something, often something difficult", "I managed to finish the report before lunch.", "manage to do; manage a team"),
+    ("mention", "verb", "/ˈmenʃən/", "to say something briefly without giving many details", "Did she mention when the bus will arrive?", "mention a name; mention something to someone"),
+    ("opportunity", "noun", "/ˌɑːpərˈtuːnəti/", "a good chance to do or get something", "The course is an opportunity to practice speaking.", "great opportunity; opportunity to learn"),
+    ("organize", "verb", "/ˈɔːrɡənaɪz/", "to plan or arrange something so it can happen well", "We organized a small party for our friend.", "organize an event; organize your time"),
+    ("particular", "adjective", "/pərˈtɪkjələr/", "specific and not general", "Is there a particular book you want to read?", "particular reason; particular type"),
+    ("perform", "verb", "/pərˈfɔːrm/", "to do an activity or entertain people", "The band will perform in the town hall tonight.", "perform a song; perform well"),
+    ("perhaps", "adverb", "/pərˈhæps/", "possibly; used when you are not certain", "Perhaps we can visit the museum tomorrow.", "perhaps later; perhaps because"),
+    ("prepare", "verb", "/prɪˈper/", "to get ready for something", "I prepared my notes before the meeting.", "prepare for an exam; prepare a meal"),
+    ("probably", "adverb", "/ˈprɑːbəbli/", "very likely, but not completely certain", "It will probably rain this afternoon.", "probably true; will probably happen"),
+    ("protect", "verb", "/prəˈtekt/", "to keep someone or something safe from harm", "Sunglasses protect your eyes from bright light.", "protect the environment; protect someone from harm"),
+    ("provide", "verb", "/prəˈvaɪd/", "to give someone something that is needed", "The hotel provides clean towels for every guest.", "provide information; provide someone with something"),
+    ("purpose", "noun", "/ˈpɜːrpəs/", "the reason why something is done or exists", "The purpose of this meeting is to share ideas.", "main purpose; sense of purpose"),
+    ("realize", "verb", "/ˈriːəlaɪz/", "to understand or notice something", "I realized that I had left my keys at home.", "realize a mistake; suddenly realize"),
+    ("receive", "verb", "/rɪˈsiːv/", "to get something that someone gives or sends you", "She received a letter from the college.", "receive a message; receive a prize"),
+    ("recent", "adjective", "/ˈriːsənt/", "happening or starting not long ago", "I read a recent report about city transport.", "recent news; recent changes"),
+    ("relationship", "noun", "/rɪˈleɪʃənʃɪp/", "the way two people or things are connected", "They have a good relationship with their neighbors.", "close relationship; working relationship"),
+    ("responsible", "adjective", "/rɪˈspɑːnsəbəl/", "expected to take care of someone or something", "I am responsible for checking the room each evening.", "responsible for; responsible person"),
+    ("result", "noun", "/rɪˈzʌlt/", "something that happens because of an action or situation", "The result of the game was two goals to one.", "final result; result of a test"),
+    ("role", "noun", "/roʊl/", "the job or part that someone has in a situation", "Parents play an important role in a child's education.", "play a role; leading role"),
+    ("solution", "noun", "/səˈluːʃən/", "an answer to a problem", "We found a simple solution to the computer problem.", "find a solution; possible solution"),
+    ("succeed", "verb", "/səkˈsiːd/", "to achieve what you want or plan to do", "If you practice, you can succeed in the exam.", "succeed in business; succeed in doing something"),
+    ("suggest", "verb", "/səˈdʒest/", "to offer an idea for someone to think about", "I suggest taking the earlier train.", "suggest an idea; suggest doing something"),
+    ("support", "verb", "/səˈpɔːrt/", "to help someone or show that you agree with them", "Her friends supported her during the move.", "support a friend; support a plan"),
+    ("traditional", "adjective", "/trəˈdɪʃənəl/", "connected with customs followed for a long time", "We ate a traditional meal during the festival.", "traditional food; traditional music"),
+    ("volunteer", "noun", "/ˌvɑːlənˈtɪr/", "a person who offers to do something without being paid", "A volunteer helped visitors find their seats.", "help as a volunteer; volunteer worker"),
+    ("waste", "verb", "/weɪst/", "to use more time, money, or material than you need", "Turn off the tap so we do not waste water.", "waste time; waste food"),
+]
+
+
+def get_seed_words() -> list[dict[str, Any]]:
+    """Return independent word records for database initialization."""
+    records: list[dict[str, Any]] = []
+    for level, entries in (("A2", A2_WORDS), ("B1", B1_WORDS)):
+        for word, pos, phonetics, definition, example, collocations in entries:
+            records.append(
+                {
+                    "word": word,
+                    "cefr_level": level,
+                    "part_of_speech": pos,
+                    "phonetics": phonetics,
+                    "definition": definition,
+                    "example_sentence": example,
+                    "collocations": collocations,
+                }
+            )
+    for word, level, pos, definition, example in ADDITIONAL_WORDS:
+        records.append(
+            {
+                "word": word,
+                "cefr_level": level,
+                "part_of_speech": pos,
+                "phonetics": "",
+                "definition": definition,
+                "example_sentence": example,
+                "collocations": "",
+            }
+        )
+    return records
